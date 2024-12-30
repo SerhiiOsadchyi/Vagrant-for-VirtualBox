@@ -8,4 +8,5 @@ rm -rf .git
 
 vagrant up
 
-127.0.0.1
+127.0.0.1:2223  // 127.0.0.1:2224  //  127.0.0.1:2224
+username & password: vagrant
