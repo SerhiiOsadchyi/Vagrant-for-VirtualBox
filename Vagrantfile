@@ -1,7 +1,10 @@
 Vagrant.configure("2") do |config|
 	(1..3).each do |i|
 		config.vm.define "server#{i}" do |web|
-			web.vm.box = "ubuntu/focal64"
+			# config.vagrant.plugins = "vagrant-libvirt"
+			# config.vm.box = "cloud-image/ubuntu-24.04"
+  			# config.vm.synced_folder ".", "/vagrant", disabled: true
+			web.vm.box = "ubuntu/jammy64"
 			web.vm.network "forwarded_port", id: "ssh", host: 2222 + i, guest: 22
 			web.vm.network "private_network", ip: "10.11.10.#{i}", virtualbox__intnet: true
 			web.vm.hostname = "server#{i}"
